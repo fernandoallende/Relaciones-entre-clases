@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="entidades">
+  <ClassDiagramComponents>
+    <Class name="Juego" package="entidades" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="jugador" type="Jugador" visibility="private"/>
+        <Field name="revolveDeAgua" type="Revolver" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Jugador" name="jugador"/>
+          <Argument type="Revolver" name="revolveDeAgua"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getJugador" returnType="Jugador" visibility="public"/>
+        <Method name="setJugador" returnType="void" visibility="public">
+          <Argument type="Jugador" name="jugador"/>
+        </Method>
+        <Method name="getRevolveDeAgua" returnType="Revolver" visibility="public"/>
+        <Method name="setRevolveDeAgua" returnType="void" visibility="public">
+          <Argument type="Revolver" name="revolveDeAgua"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Jugador" package="entidades" visibility="public" xPosition="36.0" yPosition="345.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="mojado" type="Double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="Double" name="mojado"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getMojado" returnType="Double" visibility="public"/>
+        <Method name="setMojado" returnType="void" visibility="public">
+          <Argument type="Double" name="mojado"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Revolver" package="entidades" visibility="public" xPosition="768.0" yPosition="20.0">
+      <Fields>
+        <Field name="posicioActual" type="Integer" visibility="private"/>
+        <Field name="posicionAgua" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="posicioActual"/>
+          <Argument type="Integer" name="posicionAgua"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPosicioActual" returnType="Integer" visibility="public"/>
+        <Method name="setPosicioActual" returnType="void" visibility="public">
+          <Argument type="Integer" name="posicioActual"/>
+        </Method>
+        <Method name="getPosicionAgua" returnType="Integer" visibility="public"/>
+        <Method name="setPosicionAgua" returnType="void" visibility="public">
+          <Argument type="Integer" name="posicionAgua"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="entidades.Juego" target="entidades.Revolver" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="entidades.Juego" target="entidades.Jugador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="jugador" source="entidades.Juego" target="entidades.Jugador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="revolveDeAgua" source="entidades.Juego" target="entidades.Revolver" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
